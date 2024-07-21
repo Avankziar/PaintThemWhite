@@ -1,0 +1,5 @@
+Language: 'German'
+Whitelist: false
+MaintenanceMode: false
+WhitelistCustomPath: 'wnull'
+MaintenanceModeCustomPath: 'mnull'

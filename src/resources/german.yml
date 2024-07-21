@@ -1,0 +1,37 @@
+JoinListener:
+  NotWhitelisted: '&cDu stehst nicht auf der Whiteliste!'
+  NotOnMaintenanceMode: '&cDer Server befindet sich zur Zeit im Wartungsmodus!'
+CmdWhitelist:
+  msg1: '&cDafür hast du keine Rechte!'
+  msg2: '&7[&6PaintThemWhite&7] &fDie Whiteliste wurde &2angeschaltet&f!'
+  msg3: '&7[&6PaintThemWhite&7] &fDie Whiteliste wurde &causgeschaltet&f!'
+  msg4: '&7[&6PaintThemWhite&7] &4Unerwarteter Wert! &fDie Whiteliste wurde &causgeschaltet&f!'
+  msg5: '&cDer Spieler existiert nicht!'
+  add:
+    msg1: '&cDieser Spieler existiert nicht!'
+    msg2: '&fSpieler &7%p% wurde der Whitelist &2hinzugefügt&f!'
+  remove:
+    msg1: '&cDieser Spieler existiert nicht!'
+    msg2: '&cDieser Spieler ist nicht auf der Whiteliste!'
+    msg3: '&fSpieler &7%p% wurde von der Whitelist &cgelöscht&f!'
+  list:
+    msg1: '&7Auf der Whiteliste sind: &e'
+Maintenancemode:
+  msg1: '&cDafür hast du keine Rechte!'
+  msg2: '&7[&6PaintThemWhite&7] &fWartungsmodus wurde &caktiviert!'
+  msg3: '&7[&6PaintThemWhite&7] &fWartungsmodus wurde &adeaktiviert!'
+  msg4: '&cDer Spieler existiert nicht!'
+  add:
+    msg1: '&cDieser Spieler existiert nicht!'
+    msg2: '&fSpieler &7%p% wurde der Wartungsmodusliste &2hinzugefügt&f!'
+  remove:
+    msg1: '&cDieser Spieler existiert nicht!'
+    msg2: '&cDieser Spieler ist nicht auf der Wartungsmodusliste!'
+    msg3: '&fSpieler &7%p% wurde von der Wartungsmodusliste &cgelöscht&f!'
+  list:
+    msg1: '&7Auf der Wartungsmodusliste sind: &e'
+PtwReload:
+  Success: '&aYaml-Dateien & Mysql wurden neu geladen.'
+  Error: '&cEs wurde ein Fehler gefunden! Siehe Konsole!'
+wnull: '&cWhitelist sagt Nein...'
+mnull: '&cWartungsmodus sagt Nein...'
