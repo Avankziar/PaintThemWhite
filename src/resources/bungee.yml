@@ -1,4 +1,4 @@
 name: PaintThemWhite
-main: de.avankziar.paintthemwhite.bungee.PaintThemWhite
+main: de.avankziar.ptw.bungee.PTW
 version: 8
 author: Avankziar

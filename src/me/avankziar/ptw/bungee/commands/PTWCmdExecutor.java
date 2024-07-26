@@ -1,16 +1,16 @@
-package me.avankziar.ptm.bungee.commands;
+package me.avankziar.ptw.bungee.commands;
 
-import me.avankziar.ptm.bungee.assistance.ChatApi;
-import me.avankziar.ptw.bungee.PaintThemWhite;
+import me.avankziar.ptw.bungee.PTW;
+import me.avankziar.ptw.bungee.assistance.ChatApiOld;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
-public class PTW extends Command
+public class PTWCmdExecutor extends Command
 {
-	private PaintThemWhite plugin;
+	private PTW plugin;
 	
-	public PTW(PaintThemWhite plugin)
+	public PTWCmdExecutor(PTW plugin)
 	{
 		super("ptwreload", null, "paintthemwhitereload");
 		this.plugin = plugin;
@@ -24,18 +24,18 @@ public class PTW extends Command
 			ProxiedPlayer player = (ProxiedPlayer) sender;
 			if(!player.hasPermission("ptw.cmd.reload"))
 			{
-				player.sendMessage(ChatApi.tctl(plugin.getYamlHandler().getL().getString("CmdWhitelist.msg1")));
+				player.sendMessage(ChatApiOld.tctl(plugin.getYamlHandler().getLang().getString("NoPermission")));
 	    		return;
 			}
 			if(plugin.reload())
 			{
 				///Yaml Datein wurden neugeladen.
-				player.sendMessage(ChatApi.tctl(plugin.getYamlHandler().getL().getString("PtwReload.Success")));
+				player.sendMessage(ChatApiOld.tctl(plugin.getYamlHandler().getLang().getString("PtwReload.Success")));
 				return;
 			} else
 			{
 				///Es wurde ein Fehler gefunden! Siehe Konsole!
-				player.sendMessage(ChatApi.tctl(plugin.getYamlHandler().getL().getString("PtwReload.Error")));
+				player.sendMessage(ChatApiOld.tctl(plugin.getYamlHandler().getLang().getString("PtwReload.Error")));
 				return;
 			}
 		}

@@ -1,4 +1,4 @@
-package me.avankziar.ptm.bungee.metrics;
+package me.avankziar.ptw.bungee.metrics;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

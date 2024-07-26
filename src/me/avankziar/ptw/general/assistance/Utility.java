@@ -1,4 +1,4 @@
-package me.avankziar.ptm.bungee.assistance;
+package me.avankziar.ptw.general.assistance;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
