@@ -17,7 +17,7 @@ import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import me.avankziar.ptw.general.database.Language.ISO639_2B;
 
-public class YamlHandler implements YamlHandling
+public class YamlHandler
 {
 	private String pluginname;
 	private Path dataDirectory;
@@ -38,12 +38,6 @@ public class YamlHandler implements YamlHandling
 	public YamlDocument getConfig()
 	{
 		return config;
-	}
-	
-	private YamlDocument commands;
-	public YamlDocument getCommands()
-	{
-		return commands;
 	}
 	
 	private YamlDocument lang;
@@ -105,13 +99,6 @@ public class YamlHandler implements YamlHandling
 			config = YamlDocument.create(new File(directory,"%f%.yml".replace("%f%", f)),
 					getClass().getResourceAsStream("/default.yml"),gsd,lsd,dsd,usd);
 			if(!setupStaticFile(f, config, yamlManager.getConfigKey()))
-			{
-				return false;
-			}
-			f = "commands";
-			commands = YamlDocument.create(new File(directory,"%f%.yml".replace("%f%", f)),
-					getClass().getResourceAsStream("/default.yml"),gsd,lsd,dsd,usd);
-			if(!setupStaticFile(f, commands, yamlManager.getCommandsKey()))
 			{
 				return false;
 			}
@@ -218,18 +205,5 @@ public class YamlHandler implements YamlHandling
 	    	return false;
 	    }
 		return true;
-	}
-	
-	@Override
-	public String getCommandString(String s)
-	{
-		return getCommands().getString(s);
-	}
-	
-	@Override
-	public String getCommandString(String s, String defaults)
-	{
-		String r = getCommandString(s);
-		return r != null ? r : defaults;
 	}
 }
