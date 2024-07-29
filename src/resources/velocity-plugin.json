@@ -1,0 +1,7 @@
+{"id":"paintthemwhite",
+"name":"paintthemwhite",
+"version":"${version}",
+"description":"Whitelist and MaintenaceMode",
+"authors":["Avankziar"],
+"dependencies":[],
+"main":"me.avankziar.ptw.velocity.PTW"}

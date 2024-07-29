@@ -25,7 +25,7 @@ import me.avankziar.ptw.velocity.listener.JoinListener;
 
 @Plugin(
 	id = "paintthemwhite",
-	name = "PaintThemWhite",
+	name = "paintthemwhite",
 	version = "8-4-0",
 	url = "https://www.spigotmc.org/resources/paint-them-white.60596/",
 	dependencies = {},
@@ -58,7 +58,7 @@ public class PTW
     	this.logger = Logger.getLogger("PTW");
     	PluginDescription pd = server.getPluginManager().getPlugin(pluginname.toLowerCase()).get().getDescription();
         List<String> dependencies = new ArrayList<>();
-        pd.getDependencies().stream().allMatch(x -> dependencies.add(x.toString()));
+        pd.getDependencies().stream().allMatch(x -> dependencies.add(x.getId()));
         //https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=BM
 		logger.info(" ██████╗ ████████╗██╗    ██╗ | Id: "+pd.getId());
 		logger.info(" ██╔══██╗╚══██╔══╝██║    ██║ | Version: "+pd.getVersion().get());
