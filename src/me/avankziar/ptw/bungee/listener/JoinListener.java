@@ -52,6 +52,18 @@ public class JoinListener implements Listener
 		}
 		if(whitelist)
 		{
+			if(event.getConnection() == null || event.getConnection().getUniqueId() == null)
+			{
+				String message = plugin.getYamlHandler().getLang().getString("JoinListener.NotWhitelisted");
+				String custompath = plugin.getYamlHandler().getConfig().getString("WhitelistCustomPath");
+				if(plugin.getYamlHandler().getLang().get(custompath, null) != null)
+				{
+					message = plugin.getYamlHandler().getLang().getString(custompath);
+				}
+				event.setReason(ChatApiOld.tctl(message));
+				event.setCancelled(true);
+				return;
+			}
 			String uuid = event.getConnection()
 					.getUniqueId().toString();
 			if(plugin.getYamlHandler().getWH().contains(uuid))

@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.avankziar</groupId>
 	<artifactId>paintthemwhite</artifactId>
-	<version>8-4-0</version>
+	<version>8-4-1</version>
 	<name>PaintThemWhite</name>
 	<url>https://github.com/${repository-owner}/${repository-name}.git</url>
     <scm>

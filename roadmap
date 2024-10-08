@@ -1,3 +1,6 @@
+Build 8-4-1
+- If Whitelist is on, and the pendingconnection or the UUID of this is null, will be kicked from server.
+
 Build 8-4-0
 - MC 1.21 Support
 - Velocity Support
