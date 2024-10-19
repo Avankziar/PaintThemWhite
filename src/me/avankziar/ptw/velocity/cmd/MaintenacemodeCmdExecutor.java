@@ -7,7 +7,6 @@ import com.velocitypowered.api.proxy.Player;
 import me.avankziar.ptw.general.assistance.Utility;
 import me.avankziar.ptw.velocity.PTW;
 import me.avankziar.ptw.velocity.assistance.ChatApi;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 public class MaintenacemodeCmdExecutor implements SimpleCommand
 {
@@ -22,7 +21,7 @@ public class MaintenacemodeCmdExecutor implements SimpleCommand
 	{
         CommandSource sender = invocation.source();
         String[] args = invocation.arguments();
-        if(!(sender instanceof ProxiedPlayer))
+        if(!(sender instanceof Player))
     	{
     		if(args.length == 1 || args.length == 2)
         	{
