@@ -1,3 +1,8 @@
+Build 8-4-2
+- syntax fix for maintenancemode file name.
+- UUID NPE fix. If you join with a 1.20.1 or lower and MaintenanceMode or Whitelist is active, you will ALWAYS be denied!
+  Because it cant be checked if you are on the list or not.
+
 Build 8-4-1
 - If Whitelist is on, and the pendingconnection or the UUID of this is null, will be kicked from server.
 

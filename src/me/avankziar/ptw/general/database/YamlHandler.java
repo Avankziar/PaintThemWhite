@@ -109,7 +109,7 @@ public class YamlHandler
 			{
 				return false;
 			}
-			f = "maintenacemode";
+			f = "maintenancemode";
 			maintenacemode = YamlDocument.create(new File(directory,"%f%.yml".replace("%f%", f)),
 					getClass().getResourceAsStream("/default.yml"),gsd,lsd,dsd,usd);
 			if(!setupStaticFile(f, maintenacemode, new LinkedHashMap<>()))

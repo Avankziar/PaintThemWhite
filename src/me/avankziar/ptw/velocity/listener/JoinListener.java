@@ -27,18 +27,19 @@ public class JoinListener
 		}
 		if(maintenanceMode)
 		{
+			if(event.getUniqueId() == null)
+			{
+				String message = getMaintenanceModeMessage();
+				event.setResult(PreLoginComponentResult.denied(ChatApi.tl(message)));
+				return;
+			}
 			String uuid = event.getUniqueId().toString();
 			if(plugin.getYamlHandler().getMM().contains(uuid))
 			{
 				return;
 			}
 			plugin.getLogger().info(uuid+" try to login!");
-			String message = plugin.getYamlHandler().getLang().getString("JoinListener.NotOnMaintenanceMode");
-			String custompath = plugin.getYamlHandler().getConfig().getString("MaintenanceModeCustomPath");
-			if(plugin.getYamlHandler().getLang().get(custompath, null) != null)
-			{
-				message = plugin.getYamlHandler().getLang().getString(custompath);
-			}
+			String message = getMaintenanceModeMessage();
 			event.setResult(PreLoginComponentResult.denied(ChatApi.tl(message)));
 			return;
 		}
@@ -50,20 +51,43 @@ public class JoinListener
 		}
 		if(whitelist)
 		{
+			if(event.getUniqueId() == null)
+			{
+				String message = getWhiteListeMessage();
+				event.setResult(PreLoginComponentResult.denied(ChatApi.tl(message)));
+				return;
+			}
 			String uuid = event.getUniqueId().toString();
 			if(plugin.getYamlHandler().getWH().contains(uuid))
 			{
 				return;
 			}
 			plugin.getLogger().info(uuid+" try to login!");
-			String message = plugin.getYamlHandler().getLang().getString("JoinListener.NotWhitelisted");
-			String custompath = plugin.getYamlHandler().getConfig().getString("WhitelistCustomPath");
-			if(plugin.getYamlHandler().getLang().get(custompath, null) != null)
-			{
-				message = plugin.getYamlHandler().getLang().getString(custompath);
-			}
+			String message = getWhiteListeMessage();
 			event.setResult(PreLoginComponentResult.denied(ChatApi.tl(message)));
 			return;
 		}
+	}
+	
+	private String getMaintenanceModeMessage()
+	{
+		String message = plugin.getYamlHandler().getLang().getString("JoinListener.NotOnMaintenanceMode");
+		String custompath = plugin.getYamlHandler().getConfig().getString("MaintenanceModeCustomPath");
+		if(plugin.getYamlHandler().getLang().get(custompath, null) != null)
+		{
+			message = plugin.getYamlHandler().getLang().getString(custompath);
+		}
+		return message;
+	}
+	
+	private String getWhiteListeMessage()
+	{
+		String message = plugin.getYamlHandler().getLang().getString("JoinListener.NotWhitelisted");
+		String custompath = plugin.getYamlHandler().getConfig().getString("WhitelistCustomPath");
+		if(plugin.getYamlHandler().getLang().get(custompath, null) != null)
+		{
+			message = plugin.getYamlHandler().getLang().getString(custompath);
+		}
+		return message;
 	}
 }
