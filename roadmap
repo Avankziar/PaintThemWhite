@@ -1,3 +1,7 @@
+8-5-0
+- MC 1.21.4 support
+- Velocity 3.4.0 support
+
 Build 8-4-2
 - syntax fix for maintenancemode file name.
 - UUID NPE fix. If you join (velocity) with a 1.20.1 or lower and MaintenanceMode or Whitelist is active, you will ALWAYS be denied!
